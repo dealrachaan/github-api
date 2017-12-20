@@ -14,6 +14,7 @@ import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.Date;
 
+<script src="https://d3js.org/d3-collection.v1.min.js"></script>
 
 public class UserInfoAndGraphics(UserInformation myself){
      
@@ -22,11 +23,16 @@ public class UserInfoAndGraphics(UserInformation myself){
           for (GHOrganization org : thisUsersOrgs) {
                boolean newOrg = allOrgs.add(org);
                if(newOrg){
-                    //if this is a newly introduced org, create new visual node for this org
+                    //if this is a newly introduced org, create new visual node for this org + connect it to user
+                    map.set(org, org.getName());
+                    link({
+                      source: [map.get(user.userName)],
+                      target: [map.get(org.getName()]
+                    });
                     //add this orgs users to the graph
                     addOrgUsers(org);
                }else{
-                    //if not, link it to existing member nodes of this org
+                    //if not, link user to existing org
                }
           }
      }
@@ -40,7 +46,7 @@ public class UserInfoAndGraphics(UserInformation myself){
                     //add this users orgs to the graph
                     addUserOrganizations(user);
                }else{
-                    //if not, link it to existing user nodes for this member
+                    //if not, link org to existing member
                }
           }
      }
@@ -51,8 +57,13 @@ public static void main (String args[]){
      UserInformation myself = new UserInformation();
      printAll(myself); 
      //returns graphic depicting all organizations logged in user is member of, and all members of those organizations
+     <script>
      GHPersonSet<GHOrganization> allOrgs = new GHPersonSet<GHOrganization>();
      GHPersonSet<GHUser> allMembers = new GHPersonSet<GHUser>;
      allMembers.add(myself);
+     
+     var map = d3.map().set(myself, myself.userName);
+
      addUserOrganizations(myself);
+     </script>
 }
