@@ -18,7 +18,7 @@ import java.util.Date;
 public class UserInfoAndGraphics(UserInformation myself){
      
      GHPersonSet<GHOrganization> allOrgs = new GHPersonSet<GHOrganization>();
-     PagedIterable<GHUser> allMembers = new PagedIterable<GHUser>;
+     GHPersonSet<GHUser> allMembers = new GHPersonSet<GHUser>;
      
      public void addUserOrganizations(GHUser user){
           GHPersonSet<GHOrganization> thisUsersOrgs = user.getOrgs();
