@@ -31,15 +31,21 @@ public class UserInformation implements GHMyself {
     PagedIterable<GHMembership> userOrgMemberships = myself.listOrgMemberships();
     
     //fromGHUser.java
-    PagedIterable<GHUser> userFollowingList = new PagedIterable<GHUser>();
-    GHPersonSet<GHUser> userFollowersList = new GHPersonSet<GHUser>();
-    PagedIterable<GHRepository> userFollowedRepositories = new PagedIterable<GHRepository>();
-    PagedIterable<GHRepository> userStarredRepositories = new PagedIterable<GHRepository>();
-    boolean userIsOrgMember(GHOrganization);
-    boolean userIsTeamMember(GHTeam);
-    boolean userIsPublicMemberOf(GHOrganization);
-    PagedIterable<GHEventInfo> userEvents = new PagedIterable<GHEventInfo>();
-    PagedIterable<GHGist> userGists = new PagedIterable<GHGist> listGists();
+    PagedIterable<GHUser> userFollowingList = myself.listFollows();
+    GHPersonSet<GHUser> userFollowersList = myself.listFollowers();
+    PagedIterable<GHRepository> userSubscribedRepositories = myself.listSubscriptions();
+    PagedIterable<GHRepository> userStarredRepositories = myself.listStarredRepositories();
+    boolean userIsOrgMember(GHOrganization org){
+        return myself.isMemberOf(org);
+    }
+    boolean userIsTeamMember(GHTeam team){
+        return myself.isMemberOf(team);
+    }
+    boolean userIsPublicMemberOf(GHOrganization org){
+        return myself.isPublicMemberOf(org);
+    }
+    PagedIterable<GHEventInfo> userEvents = myself.listEvents();
+    PagedIterable<GHGist> userGists = myself.listGists();
     
     //from GHPerson.java
     String userGravatarId;
