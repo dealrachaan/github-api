@@ -37,7 +37,7 @@ public class UserInfoAndGraphics(UserInformation myself){
      public void addOrgUsers(GHOrganization org){
           PagedIterable<GHUser> thisOrgsUsers = org.getMembers();
           for (GHUser user : thisOrgsUsers) {
-               boolean newUser = allOrgs.add(org);
+               boolean newUser = allMembers.add(user);
                if(newUser){
                     //if this is a newly introduced org, create new visual node for this org
                     //add this users orgs to the graph
@@ -52,4 +52,5 @@ public class UserInfoAndGraphics(UserInformation myself){
 public static void main (String args[]){
      UserInformation myself = new UserInformation();
      printAll(myself);
+     
 }
