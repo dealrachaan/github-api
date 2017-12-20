@@ -50,7 +50,10 @@ public class UserInfoAndGraphics(UserInformation myself){
 }
 
 public static void main (String args[]){
+     //returns text info on logged in user
      UserInformation myself = new UserInformation();
-     printAll(myself);
-     
+     printAll(myself); 
+     //returns graphic depicting all organizations logged in user is member of, and all members of those organizations
+     allMembers.add(myself);
+     addUserOrganizations(myself);
 }
