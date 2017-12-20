@@ -2,8 +2,6 @@ package org.kohsuke.github;
 
 import java.awt.*;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,6 +13,9 @@ import java.util.Set;
 import java.util.TreeMap;
 import com.infradna.tool.bridge_method_injector.WithBridgeMethods;
 import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.net.URL;
+import java.util.Date;
 
 public class UserInformation implements GHMyself {
 
@@ -39,3 +40,20 @@ public class UserInformation implements GHMyself {
     boolean userIsPublicMemberOf(GHOrganization);
     PagedIterable<GHEventInfo> userEvents = new PagedIterable<GHEventInfo>();
     PagedIterable<GHGist> userGists = new PagedIterable<GHGist> listGists();
+    
+    //from GHPerson.java
+    String userGravatarId;
+    String userAvatarUrl;
+    String userLogIn;
+    String userName;
+    String userCompany;
+    String userLocation;
+    String userCreatedAt;
+    String userUpdatedAt;
+    String userBlog;
+    String userHtmlUrl;
+    String userEmail;
+    String userPublicGistCount;
+    String userPublicRepoCount;
+    String userFollowingCount;
+    String userFollowersCount;
