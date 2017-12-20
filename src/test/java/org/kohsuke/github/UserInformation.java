@@ -23,6 +23,10 @@ public class UserInformation implements GHMyself {
     List<String> userEmails = new List<String>();
     List<GHEmail> userEmails2 = new List<GHEmail>;
     List<GHKey> userKeys = new List<UserKeys>;
+    List<GHVerifiedKey> userVerifiedKeys = new List<GHVerifiedKey>;
+    GHPersonSet<GHOrganization> userOrganisations = new GHPersonSet<GHOrganization>;
+    Map<String,GHRepository> userRepositories = new Map<String,GHRepository>;
+    PagedIterable<GHRepository> userRepositoryList = new PagedIterable<GHRepository>;
+    PagedIterable<GHMembership> userOrgMemberships = new PagedIterable<GHMembership>;
     
-
-       
+    
