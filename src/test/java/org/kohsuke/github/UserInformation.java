@@ -21,14 +21,14 @@ public class UserInformation implements GHMyself {
 
     //from GHMyself.java
     GHUser myself = new GHMyself();
-    List<String> userEmails = new List<String>();
-    List<GHEmail> userEmails2 = new List<GHEmail>();
-    List<GHKey> userKeys = new List<UserKeys>();
-    List<GHVerifiedKey> userVerifiedKeys = new List<GHVerifiedKey>();
-    GHPersonSet<GHOrganization> userOrganizations = new GHPersonSet<GHOrganization>();
-    Map<String,GHRepository> userOwnedRepositories = new Map<String,GHRepository>();
-    PagedIterable<GHRepository> userOwnedRepositoryList = new PagedIterable<GHRepository>();
-    PagedIterable<GHMembership> userOrgMemberships = new PagedIterable<GHMembership>();
+    List<String> userEmails = myself.getEmails();
+    List<GHEmail> userEmails2 = myself.getEmails2();
+    List<GHKey> userPublicKeys = myself.getPublicKeys();
+    List<GHVerifiedKey> userVerifiedKeys = myself.getPublicVerifiedKeys();
+    GHPersonSet<GHOrganization> userOrganizations = myself.getAllOrganizations();
+    Map<String,GHRepository> userOwnedRepositories = myself.getAllRepositories();
+    PagedIterable<GHRepository> userOwnedRepositoryList = myself.listRepositories();
+    PagedIterable<GHMembership> userOrgMemberships = myself.listOrgMemberships();
     
     //fromGHUser.java
     PagedIterable<GHUser> userFollowingList = new PagedIterable<GHUser>();
