@@ -27,6 +27,74 @@ public class UserInformation implements GHMyself {
     PagedIterable<GHRepository> userOwnedRepositoryList = myself.listRepositories();
     PagedIterable<GHMembership> userOrgMemberships = myself.listOrgMemberships();
     
+    //functions to print these values
+     public void printEmails(List<String> userEmails){
+     int i=0;
+     System.out.println("User emails:");
+     for (String email : userEmails){
+         System.out.print(email+"; ");
+         i++;
+         if(i==10){
+             System.out.println(" ");
+             i=0;
+         }
+     }
+    }
+    
+    public void printEmails2(List<GHEmail> userEmails2){
+     int i=0;
+     System.out.println("User emails:");
+     for (String email : userEmails2){
+         System.out.print(email.getEmail()+"; ");
+         i++;
+         if(i==10){
+             System.out.println(" ");
+             i=0;
+         }
+     }
+    }
+    
+    public void printPublicKeys(List<GHKey> userPublicKeys){
+     int i=0;
+     System.out.println("User's public keys:");
+     for (String pubKey : userPublicKeys){
+         System.out.print(pubKey.getTitle()+"; ");
+         i++;
+         if(i==10){
+             System.out.println(" ");
+             i=0;
+         }
+     }
+    }
+    
+    public void printVerifiedKeys(List<GHVerifiedKey> userVerifiedKeys){
+     int i=0;
+     System.out.println("User's verified keys:");
+     for (String verKey : userVerifiedKeys){
+         System.out.print(verKey.getTitle()+"; ");
+         i++;
+         if(i==10){
+             System.out.println(" ");
+             i=0;
+         }
+     }
+    }
+    
+    public void printOrganizations(GHPersonSet<GHOrganization> userOrganizations){
+     int i=0;
+     System.out.println("User's verified keys:");
+     for (String org : userOrganizations){
+         System.out.print(org.getName()+"; ");
+         i++;
+         if(i==10){
+             System.out.println(" ");
+             i=0;
+         }
+     }
+    }
+    
+    
+    
     //fromGHUser.java
     PagedIterable<GHUser> userFollowingList = myself.listFollows();
     PagedIterable<GHUser> userFollowersList = myself.listFollowers();
@@ -40,10 +108,10 @@ public class UserInformation implements GHMyself {
      int i=0;
      System.out.println("User follows:");
      for (GHUser following : userFollowingList){
-         System.out.println(following.getName()+"; ");
+         System.out.print(following.getName()+"; ");
          i++;
          if(i==10){
-             System.out.print(" ");
+             System.out.println(" ");
              i=0;
          }
      }
@@ -53,10 +121,10 @@ public class UserInformation implements GHMyself {
      int i=0;
      System.out.println("Follwers of user:");   
      for (GHUser follower : userFollowingList){
-         System.out.println(follower.getName()+"; ");
+         System.out.print(follower.getName()+"; ");
          i++;
          if(i==10){
-             System.out.print(" ");
+             System.out.println(" ");
              i=0;
          }
      }
@@ -66,10 +134,10 @@ public class UserInformation implements GHMyself {
      int i=0;
      System.out.println("Subscribed Repositories:");   
      for (GHRepository subRepo : userSubscribedRepositories){
-         System.out.println(subRepo.getFullName()+"; ");
+         System.out.print(subRepo.getFullName()+"; ");
          i++;
          if(i==10){
-             System.out.print(" ");
+             System.out.println(" ");
              i=0;
          }
      }
