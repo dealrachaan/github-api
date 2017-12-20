@@ -48,18 +48,18 @@ public class UserInformation implements GHMyself {
     PagedIterable<GHGist> userGists = myself.listGists();
     
     //from GHPerson.java
-    String userGravatarId;
-    String userAvatarUrl;
-    String userLogIn;
-    String userName;
-    String userCompany;
-    String userLocation;
-    String userCreatedAt;
-    String userUpdatedAt;
-    String userBlog;
-    String userHtmlUrl;
-    String userEmail;
-    String userPublicGistCount;
-    String userPublicRepoCount;
-    String userFollowingCount;
-    String userFollowersCount;
+    String userGravatarId = myself.getGravatarId();
+    String userAvatarUrl = myself.getAvatarUrl();
+    String userLogin = myself.getLogin();
+    String userName = myself.getName();
+    String userCompany = myself.getCompany();
+    String userLocation = myself.getLocation();
+    String userCreatedAt = myself.getCreatedAt();
+    String userUpdatedAt = myself.getUpdatedAt();
+    String userBlog = myself.getBlog();
+    String userHtmlUrl = myself.getHtmlUrl();
+    String userEmail = myself.getEmail;
+    String userPublicGistCount = myself.getPublicGistCount;
+    String userPublicRepoCount = myself.getPublicRepoCount;
+    String userFollowingCount = myself.getFollowingCount;
+    String userFollowersCount = myself.getFollowersCount;
