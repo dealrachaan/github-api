@@ -20,7 +20,7 @@ import java.util.Date;
 public class UserInformation implements GHMyself {
 
     //from GHMyself.java
-    GHUser user = new GHUser();
+    GHUser myself = new GHMyself();
     List<String> userEmails = new List<String>();
     List<GHEmail> userEmails2 = new List<GHEmail>();
     List<GHKey> userKeys = new List<UserKeys>();
