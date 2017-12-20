@@ -1,8 +1,5 @@
 package org.kohsuke.github;
 
-import java.awt.*;
-import java.text.ParseException;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
