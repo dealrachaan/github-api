@@ -93,7 +93,38 @@ public class UserInformation implements GHMyself {
      }
     }
     
+    public void printUserOwnedRepositries(Map<String,GHRepository> userOwnedRepositories){
+     int i=0;
+     System.out.println("User's verified keys:");
+     for (GHRepository ownedRep : userOwnedRepositories) {
+         System.out.print(ownedRep.getFulName()"; ");
+         i++;
+         if(i==10){
+             System.out.println(" ");
+             i=0;
+         }
+     }
+    }
     
+    public void printUserOwnedRepositriesList(PagedIterable<GHRepository> userOwnedRepositoryList){
+     int i=0;
+     System.out.println("User's owned repositories:");
+     for (GHRepository ownedRepL : userOwnedRepositoryList) {
+         System.out.print(ownedRepL.getFullName()+"; ");
+         i++;
+         if(i==10){
+             System.out.println(" ");
+             i=0;
+         }
+     }
+    }
+    
+    public void printOrgMemberships(PagedIterable<GHMembership> userOrgMemberships){
+     System.out.println("Organisations user is a member of:");
+     for (GHMembership org : userOrgMemberships) {
+         System.out.println(org.getUrl()+";");
+     }
+    }
     
     //fromGHUser.java
     PagedIterable<GHUser> userFollowingList = myself.listFollows();
