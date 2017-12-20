@@ -17,9 +17,6 @@ import java.util.Date;
 
 public class UserInfoAndGraphics(UserInformation myself){
      
-     GHPersonSet<GHOrganization> allOrgs = new GHPersonSet<GHOrganization>();
-     GHPersonSet<GHUser> allMembers = new GHPersonSet<GHUser>;
-     
      public void addUserOrganizations(GHUser user){
           GHPersonSet<GHOrganization> thisUsersOrgs = user.getOrgs();
           for (GHOrganization org : thisUsersOrgs) {
@@ -54,6 +51,8 @@ public static void main (String args[]){
      UserInformation myself = new UserInformation();
      printAll(myself); 
      //returns graphic depicting all organizations logged in user is member of, and all members of those organizations
+     GHPersonSet<GHOrganization> allOrgs = new GHPersonSet<GHOrganization>();
+     GHPersonSet<GHUser> allMembers = new GHPersonSet<GHUser>;
      allMembers.add(myself);
      addUserOrganizations(myself);
 }
