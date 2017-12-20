@@ -35,6 +35,7 @@ public class UserInformation implements GHMyself {
     PagedIterable<GHEventInfo> userEvents = myself.listEvents();
     PagedIterable<GHGist> userGists = myself.listGists();
     
+    //functions to print these values
     public void printFollowingList(PagedIterable<GHUser> userFollowingList){
      int i=0;
      System.out.println("User follows:");
@@ -48,7 +49,7 @@ public class UserInformation implements GHMyself {
      }
     }
     
-    void printFollowersList(PagedIterable<GHUser> userFollowersList){
+    public void printFollowersList(PagedIterable<GHUser> userFollowersList){
      int i=0;
      System.out.println("Follwers of user:");   
      for (GHUser follower : userFollowingList){
@@ -61,7 +62,7 @@ public class UserInformation implements GHMyself {
      }
     }
     
-    void printSubscribedRepositories(PagedIterable<GHRepository> userSubscribedRepositories){
+    public void printSubscribedRepositories(PagedIterable<GHRepository> userSubscribedRepositories){
      int i=0;
      System.out.println("Subscribed Repositories:");   
      for (GHRepository subRepo : userSubscribedRepositories){
@@ -74,7 +75,7 @@ public class UserInformation implements GHMyself {
      }
     }
     
-    void printStarredRepositories(PagedIterable<GHRepository> userStarredRepositories){
+    public void printStarredRepositories(PagedIterable<GHRepository> userStarredRepositories){
      int i=0;
      System.out.println("Starred Repositories:");   
      for (GHRepository starRepo : userStarredRepositories){
@@ -87,7 +88,7 @@ public class UserInformation implements GHMyself {
      }
     }
     
-    void printUserEvents(PagedIterable<GHEventInfo> userEvents){ //only returns event ID as github doesn't provide event names in API now
+    public void printUserEvents(PagedIterable<GHEventInfo> userEvents){ //only returns event ID as github doesn't provide event names in API now
      int i=0;
      System.out.println("User Events:");   
      for (GHEventInfo event : userEvents){
@@ -100,7 +101,7 @@ public class UserInformation implements GHMyself {
      }
     }
     
-    void printUserGists(PagedIterable<GHGist> userGists){
+    public void printUserGists(PagedIterable<GHGist> userGists){
      System.out.println("User Gists:");   
      for (GHGist gist : userGists){
          System.out.println(gist.getForksUrl()+"; ");
@@ -141,4 +142,14 @@ public class UserInformation implements GHMyself {
     System.print.ln("User follows "+userFollowingCount+" people");
     System.print.ln("User has "+userFollowersCount+" followers);
     
-    
+    printFollowingList(userFollowingList);
+    printFollowersList(userFollowersList);
+    printSubscribedRepositories(userSubscribedRepositories);
+    printStarredRepositories(userStarredRepositories);
+    printUserEvents(userEvents);
+    printUserGists(userGists);
+
+
+
+
+
