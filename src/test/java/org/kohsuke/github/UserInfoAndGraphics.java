@@ -70,7 +70,7 @@ public static void main (String args[]){
      //returns text info on logged in user
      UserInformation myself = new UserInformation();
      printAll(myself); 
-     //returns graphic depicting all organizations logged in user is member of, and all members of those organizations
+     //returns graphic depicting all organizations logged in user is member of, and all members of those organizations, by connecting map nodes depicting users to map nodes depicting orgs, without reduplicating nodes
      <script>
      GHPersonSet<GHOrganization> allOrgs = new GHPersonSet<GHOrganization>();
      GHPersonSet<GHUser> allMembers = new GHPersonSet<GHUser>;
