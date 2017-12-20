@@ -39,6 +39,7 @@ public class UserInformation implements GHMyself {
              i=0;
          }
      }
+     System.out.println(" ");
     }
     
     public void printEmails2(List<GHEmail> userEmails2){
@@ -52,6 +53,7 @@ public class UserInformation implements GHMyself {
              i=0;
          }
      }
+        System.out.println(" ");
     }
     
     public void printPublicKeys(List<GHKey> userPublicKeys){
@@ -65,6 +67,7 @@ public class UserInformation implements GHMyself {
              i=0;
          }
      }
+        System.out.println(" ");
     }
     
     public void printVerifiedKeys(List<GHVerifiedKey> userVerifiedKeys){
@@ -78,6 +81,7 @@ public class UserInformation implements GHMyself {
              i=0;
          }
      }
+        System.out.println(" ");
     }
     
     public void printOrganizations(GHPersonSet<GHOrganization> userOrganizations){
@@ -91,6 +95,7 @@ public class UserInformation implements GHMyself {
              i=0;
          }
      }
+        System.out.println(" ");
     }
     
     public void printUserOwnedRepositories(Map<String,GHRepository> userOwnedRepositories){
@@ -104,6 +109,7 @@ public class UserInformation implements GHMyself {
              i=0;
          }
      }
+        System.out.println(" ");
     }
     
     public void printUserOwnedRepositriesList(PagedIterable<GHRepository> userOwnedRepositoryList){
@@ -117,6 +123,7 @@ public class UserInformation implements GHMyself {
              i=0;
          }
      }
+        System.out.println(" ");
     }
     
     public void printOrgMemberships(PagedIterable<GHMembership> userOrgMemberships){
@@ -124,6 +131,7 @@ public class UserInformation implements GHMyself {
      for (GHMembership org : userOrgMemberships) {
          System.out.println(org.getUrl()+";");
      }
+        System.out.println(" ");
     }
     
     //fromGHUser.java
