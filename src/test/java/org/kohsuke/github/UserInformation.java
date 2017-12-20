@@ -93,7 +93,7 @@ public class UserInformation implements GHMyself {
      }
     }
     
-    public void printUserOwnedRepositries(Map<String,GHRepository> userOwnedRepositories){
+    public void printUserOwnedRepositories(Map<String,GHRepository> userOwnedRepositories){
      int i=0;
      System.out.println("User's verified keys:");
      for (GHRepository ownedRep : userOwnedRepositories) {
@@ -223,32 +223,54 @@ public class UserInformation implements GHMyself {
     String userPublicRepoCount = myself.getPublicRepoCount;
     String userFollowingCount = myself.getFollowingCount;
     String userFollowersCount = myself.getFollowersCount;
+}
+
+    public void printPersonInfo(GHMyself myself){
+        System.print.ln("Gravatar ID: "+myself.userGravatarId);
+        System.print.ln("Avatar URL: "+myself.userAvatarUrl);
+        System.print.ln("Login: "+myself.userLogin);
+        System.print.ln("Name: "+myself.userName);
+        System.print.ln("Company: "+myself.userCompany);
+        System.print.ln("Location: "+myself.userLocation);
+        System.print.ln("Created at: "+myself.userCreatedAt);
+        System.print.ln("Updated at: "+myself.userUpdatedAt);
+        System.print.ln("Blog: "+myself.userBlog);
+        System.print.ln("HTML URL: "+myself.userHtmlUrl);
+        System.print.ln("Email: "+myself.userEmail);
+        System.print.ln("Gist Count: "+myself.userPublicGistCount);
+        System.print.ln("Repository count: "+myself.userPublicRepoCount);
+        System.print.ln("User follows "+myself.userFollowingCount+" people");
+        System.print.ln("User has "+myself.userFollowersCount+" followers);
+    }
     
-    //Output
-    System.print.ln("Gravatar ID: "+userGravatarId);
-    System.print.ln("Avatar URL: "+userAvatarUrl);
-    System.print.ln("Login: "+userLogin);
-    System.print.ln("Name: "+userName);
-    System.print.ln("Company: "+userCompany);
-    System.print.ln("Location: "+userLocation);
-    System.print.ln("Created at: "+userCreatedAt);
-    System.print.ln("Updated at: "+userUpdatedAt);
-    System.print.ln("Blog: "+userBlog);
-    System.print.ln("HTML URL: "+userHtmlUrl);
-    System.print.ln("Email: "+userEmail);
-    System.print.ln("Gist Count: "+userPublicGistCount);
-    System.print.ln("Repository count: "+userPublicRepoCount);
-    System.print.ln("User follows "+userFollowingCount+" people");
-    System.print.ln("User has "+userFollowersCount+" followers);
+    public void printUserInfo(GHMyself myself){
+        myself.printFollowingList(userFollowingList);
+        myself.printFollowersList(userFollowersList);
+        myself.printSubscribedRepositories(userSubscribedRepositories);
+        myself.printStarredRepositories(userStarredRepositories);
+        myself.printUserEvents(userEvents);
+        myself.printUserGists(userGists);
+    }
+                        
+    public void printMyselfInfo(GHMyself myself){
+        myself.printEmails(userEmails);
+        myself.printEmails2(userEmails2);
+        myself.printPublicKeys(userPublicKeys);
+        myself.printVerifiedKeys(userVerifiedKeys);
+        myself.printOrganizations(userOrganizations);
+        myself.printUserOwnedRepositories(userOwnedRepositories);
+        myself.printUserOwnedRepositriesList(userOwnedRepositoryList);
+        myself.printOrgMemberships(userOrgMemberships);
+    }
     
-    printFollowingList(userFollowingList);
-    printFollowersList(userFollowersList);
-    printSubscribedRepositories(userSubscribedRepositories);
-    printStarredRepositories(userStarredRepositories);
-    printUserEvents(userEvents);
-    printUserGists(userGists);
-
-
-
-
-
+    public void printAll(GHMyself myself){
+        printPersonInfo(myself);
+        printUserInfo(myself);
+        printMyselfInfo(myself);
+    }
+}
+                        
+    public static void main (String args[]){
+       UserInformation myself = new UserInformation();
+       printAll(myself);
+    }
