@@ -29,20 +29,83 @@ public class UserInformation implements GHMyself {
     
     //fromGHUser.java
     PagedIterable<GHUser> userFollowingList = myself.listFollows();
-    GHPersonSet<GHUser> userFollowersList = myself.listFollowers();
+    PagedIterable<GHUser> userFollowersList = myself.listFollowers();
     PagedIterable<GHRepository> userSubscribedRepositories = myself.listSubscriptions();
     PagedIterable<GHRepository> userStarredRepositories = myself.listStarredRepositories();
-    boolean userIsOrgMember(GHOrganization org){
-        return myself.isMemberOf(org);
-    }
-    boolean userIsTeamMember(GHTeam team){
-        return myself.isMemberOf(team);
-    }
-    boolean userIsPublicMemberOf(GHOrganization org){
-        return myself.isPublicMemberOf(org);
-    }
     PagedIterable<GHEventInfo> userEvents = myself.listEvents();
     PagedIterable<GHGist> userGists = myself.listGists();
+    
+    public void printFollowingList(PagedIterable<GHUser> userFollowingList){
+     int i=0;
+     System.out.println("User follows:");
+     for (GHUser following : userFollowingList){
+         System.out.println(following.getName()+"; ");
+         i++;
+         if(i==10){
+             System.out.print(" ");
+             i=0;
+         }
+     }
+    }
+    
+    void printFollowersList(PagedIterable<GHUser> userFollowersList){
+     int i=0;
+     System.out.println("Follwers of user:");   
+     for (GHUser follower : userFollowingList){
+         System.out.println(follower.getName()+"; ");
+         i++;
+         if(i==10){
+             System.out.print(" ");
+             i=0;
+         }
+     }
+    }
+    
+    void printSubscribedRepositories(PagedIterable<GHRepository> userSubscribedRepositories){
+     int i=0;
+     System.out.println("Subscribed Repositories:");   
+     for (GHRepository subRepo : userSubscribedRepositories){
+         System.out.println(subRepo.getFullName()+"; ");
+         i++;
+         if(i==10){
+             System.out.print(" ");
+             i=0;
+         }
+     }
+    }
+    
+    void printStarredRepositories(PagedIterable<GHRepository> userStarredRepositories){
+     int i=0;
+     System.out.println("Starred Repositories:");   
+     for (GHRepository starRepo : userStarredRepositories){
+         System.out.print(starRepo.getFullName()+"; ");
+         i++;
+         if(i==10){
+             System.out.println(" ");
+             i=0;
+         }
+     }
+    }
+    
+    void printUserEvents(PagedIterable<GHEventInfo> userEvents){ //only returns event ID as github doesn't provide event names in API now
+     int i=0;
+     System.out.println("User Events:");   
+     for (GHEventInfo event : userEvents){
+         System.out.print(event.getId()+"; ");
+         i++;
+         if(i==10){
+             System.out.println(" ");
+             i=0;
+         }
+     }
+    }
+    
+    void printUserGists(PagedIterable<GHGist> userGists){
+     System.out.println("User Gists:");   
+     for (GHGist gist : userGists){
+         System.out.println(gist.getForksUrl()+"; ");
+     }
+    }
     
     //from GHPerson.java
     String userGravatarId = myself.getGravatarId();
@@ -77,4 +140,5 @@ public class UserInformation implements GHMyself {
     System.print.ln("Repository count: "+userPublicRepoCount);
     System.print.ln("User follows "+userFollowingCount+" people");
     System.print.ln("User has "+userFollowersCount+" followers);
+    
     
