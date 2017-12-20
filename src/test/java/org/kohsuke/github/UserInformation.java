@@ -269,8 +269,4 @@ public class UserInformation implements GHMyself {
         printMyselfInfo(myself);
     }
 }
-                        
-    public static void main (String args[]){
-       UserInformation myself = new UserInformation();
-       printAll(myself);
-    }
+     
