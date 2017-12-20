@@ -17,7 +17,7 @@ import java.util.Date;
 public class UserInformation implements GHMyself {
 
     //from GHMyself.java
-    GHUser myself = new GHMyself();
+    GHMyself myself = new GHMyself();
     List<String> userEmails = myself.getEmails();
     List<GHEmail> userEmails2 = myself.getEmails2();
     List<GHKey> userPublicKeys = myself.getPublicKeys();
