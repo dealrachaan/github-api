@@ -27,12 +27,16 @@ public class UserInfoAndGraphics(UserInformation myself){
                     map.set(org, org.getName());
                     link({
                       source: [map.get(user.userName)],
-                      target: [map.get(org.getName()]
+                      target: [map.get(org.getName())]
                     });
                     //add this orgs users to the graph
                     addOrgUsers(org);
                }else{
                     //if not, link user to existing org
+                    link({
+                      source: [map.get(user.userName)],
+                      target: [map.get(org.getName())]
+                    });
                }
           }
      }
@@ -43,10 +47,20 @@ public class UserInfoAndGraphics(UserInformation myself){
                boolean newUser = allMembers.add(user);
                if(newUser){
                     //if this is a newly introduced org, create new visual node for this org
+                    map.set(user, user.userName);
+                    link({
+                      source: [map.get(org.getName())],
+                      target: [map.get(user.userName)]
+                    });
                     //add this users orgs to the graph
                     addUserOrganizations(user);
                }else{
                     //if not, link org to existing member
+                    map.set(user, user.userName);
+                    link({
+                      source: [map.get(org.getName())],
+                      target: [map.get(user.userName)]
+                    });
                }
           }
      }
