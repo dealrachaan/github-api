@@ -14,6 +14,10 @@ import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.Date;
 
+
+public class UserInfoAndGraphics{
+}
+
 public static void main (String args[]){
      UserInformation myself = new UserInformation();
      printAll(myself);
