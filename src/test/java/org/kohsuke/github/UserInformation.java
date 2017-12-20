@@ -60,3 +60,21 @@ public class UserInformation implements GHMyself {
     String userPublicRepoCount = myself.getPublicRepoCount;
     String userFollowingCount = myself.getFollowingCount;
     String userFollowersCount = myself.getFollowersCount;
+    
+    //Output
+    System.print.ln("Gravatar ID: "+userGravatarId);
+    System.print.ln("Avatar URL: "+userAvatarUrl);
+    System.print.ln("Login: "+userLogin);
+    System.print.ln("Name: "+userName);
+    System.print.ln("Company: "+userCompany);
+    System.print.ln("Location: "+userLocation);
+    System.print.ln("Created at: "+userCreatedAt);
+    System.print.ln("Updated at: "+userUpdatedAt);
+    System.print.ln("Blog: "+userBlog);
+    System.print.ln("HTML URL: "+userHtmlUrl);
+    System.print.ln("Email: "+userEmail);
+    System.print.ln("Gist Count: "+userPublicGistCount);
+    System.print.ln("Repository count: "+userPublicRepoCount);
+    System.print.ln("User follows "+userFollowingCount+" people");
+    System.print.ln("User has "+userFollowersCount+" followers);
+    
